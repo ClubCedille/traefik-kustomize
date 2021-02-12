@@ -2,12 +2,15 @@ resources:
 - resources/dashboard-service.yaml
 - resources/default-cert-secret.yaml
 - resources/deployment.yaml
-- resources/hpa.yaml
 - resources/prometheus-service.yaml
 - resources/service.yaml
 - resources/rbac.yaml
 
 namespace: kube-system
+
+images:
+  - name: traefik
+    newTag: 1.7.28
 
 commonLabels:
   app.kubernetes.io/name: traefik
